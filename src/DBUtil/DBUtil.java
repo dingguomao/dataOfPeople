@@ -18,7 +18,7 @@ public class DBUtil {
 	        try {
 	            Class.forName("org.neo4j.jdbc.Driver").newInstance();
 
-	            this.con = DriverManager.getConnection("jdbc:neo4j:http://116.62.232.244:7474","neo4j","scz000614");
+	            this.con = DriverManager.getConnection("jdbc:neo4j:http://IP地址:7474","用户名","密码");
 
 	            this.stmt =  con.createStatement();
 
