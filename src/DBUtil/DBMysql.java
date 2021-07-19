@@ -15,15 +15,15 @@ import com.mysql.jdbc.StringUtils;
 
 public class DBMysql {
 
-	String URL ="jdbc:mysql://116.62.232.244:3306/lvyou?characterEncoding=utf8";
-	String USER ="lvyou";
-	String PWD = "scz000614";
+	String URL ="jdbc:mysql://ipåœ°å€:3306/lvyou?characterEncoding=utf8";
+	String USER ="ç”¨æˆ·å";
+	String PWD = "å¯†ç ";
 	Connection connection = null;
 	PreparedStatement pstmt = null;
 	ResultSet res = null;
 	
 	
-		//»ñÈ¡connection¶ÔÏó
+		//è·å–connectionå¯¹è±¡
 		public Connection getConnection () throws ClassNotFoundException, SQLException {
 			
 			Class.forName("com.mysql.jdbc.Driver");
@@ -33,7 +33,7 @@ public class DBMysql {
 			return connection;
 			
 		}
-		//»ñµÃpreparestatement¶ÔÏó
+		//è·å¾—preparestatementå¯¹è±¡
 		public PreparedStatement getPreparedStatement(String sql) throws ClassNotFoundException, SQLException {
 			
 			Connection connection = getConnection();
@@ -41,7 +41,7 @@ public class DBMysql {
 			
 			return pstmt;
 		}
-		//¹Ø±ÕÁ÷
+		//å…³é—­æµ
 		public void shutdown(PreparedStatement pstmt, Connection connection,ResultSet res) throws SQLException {
 			
 			if (pstmt!=null) {
@@ -57,7 +57,7 @@ public class DBMysql {
 		
 		}
 		
-		//Í¨ÓÃµÄÔöÉ¾¸Ä
+		//é€šç”¨çš„å¢åˆ æ”¹
 		public boolean Upload(String sql,Object[] obj) {
 			
 			try {
@@ -94,7 +94,7 @@ public class DBMysql {
 			return false;
 			
 		}
-		//Í¨ÓÃµÄ²é
+		//é€šç”¨çš„æŸ¥
 		public ResultSet query(String sql,Object[] obj) {
 
 			
@@ -116,9 +116,9 @@ public class DBMysql {
 			
 			
 		}
-		//²éÑ¯ÈË¿ÚÊı
+		//æŸ¥è¯¢äººå£æ•°
 		public List<HashMap<String, Object>> queryPeopNum(String city) {
-			String sql = "select µØÇø,ÈË¿Ú from "+city+" where id>1";
+			String sql = "select åœ°åŒº,äººå£ from "+city+" where id>1";
 			Object[] object = {
 					
 			};
@@ -130,8 +130,8 @@ public class DBMysql {
 				while (res.next()) {
 					HashMap<String, Object> rk = new HashMap<String, Object>();
 
-					String name = res.getString("µØÇø");
-					String value = res.getString("ÈË¿Ú");
+					String name = res.getString("åœ°åŒº");
+					String value = res.getString("äººå£");
 					rk.put("name", name);
 					rk.put("value",value);
 					res1.add(rk);
